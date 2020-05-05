@@ -1,3 +1,3 @@
 class DailychecklistSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :user_id, :checked_statuses
 end

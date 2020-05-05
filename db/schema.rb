@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_27_175128) do
+ActiveRecord::Schema.define(version: 2020_05_05_032819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 2020_04_27_175128) do
   end
 
   create_table "dailychecklists", force: :cascade do |t|
-    t.integer "user"
-    t.string "name"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "checked_statuses"
   end
 
   create_table "dailychecklists_villagers", force: :cascade do |t|
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 2020_04_27_175128) do
   end
 
   create_table "settings", force: :cascade do |t|
-    t.integer "user"
+    t.integer "user_id"
     t.date "time"
     t.string "hemisphere"
     t.date "birthday"
@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2020_04_27_175128) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.integer "dailychecklist"
+    t.integer "dailychecklist_id"
     t.string "name"
     t.integer "num_of_boxes"
     t.datetime "created_at", precision: 6, null: false

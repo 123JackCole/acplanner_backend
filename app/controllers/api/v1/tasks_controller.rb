@@ -7,7 +7,7 @@ class Api::V1::TasksController < ApplicationController
     end
 
     def show
-        @task = Task.find_by(name: params[:id])
+        @task = Task.where(dailychecklist_id: params[:id])
         render json: @task
     end
 
@@ -19,6 +19,12 @@ class Api::V1::TasksController < ApplicationController
         else 
             render json: { message: @task.errors.full_messages} 
         end
+    end
+
+    def destroy
+        @task = Task.find(params[:id])
+        @task.destroy
+        render json: { message: "Task successfully deleted" }
     end
 
     private
