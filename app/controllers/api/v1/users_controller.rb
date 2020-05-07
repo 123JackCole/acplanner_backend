@@ -14,15 +14,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       @user.save
-      @dailychecklist = Dailychecklist.create(user_id: @user.id, checked_statuses: "
-        [false,false,false,false,false,false],
-        [false,false,false],
-        [false,false],
-        [false],
-        [false,false],
-        [false,false,false,false,false],
-        [false,false,false,false,false,false,false,false,false,false]
-      ")
+      @dailychecklist = Dailychecklist.create(user_id: @user.id, checked_statuses: "[false,false,false,false,false,false][false,false,false][false,false][false][false,false][false,false,false,false,false][false,false,false,false,false,false,false,false,false,false]")
       Task.create(dailychecklist_id: @dailychecklist.id, name: "Hit Rocks", num_of_boxes: 6)
       Task.create(dailychecklist_id: @dailychecklist.id, name: "Excavate Fossils", num_of_boxes: 4)
       Task.create(dailychecklist_id: @dailychecklist.id, name: "Plant/Harvest Money Tree", num_of_boxes: 2)
