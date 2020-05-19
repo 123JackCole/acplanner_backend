@@ -1,7 +1,7 @@
 AC Planner
 ========================
 
-AC Planner is a site aimed at Animal Crossing New Horizons enthusiast
+AC Planner is a site aimed at Animal Crossing New Horizons enthusiasts
 
 Here's a link to a [demo](https://www.youtube.com/watch?v=lEGqJHjB6ck)
 
