@@ -1,18 +1,24 @@
 require "rest-client"
 
+# Removes all old user accounts
 User.destroy_all
+
+# Removes all old checklists associated with user accounts
+Dailychecklist.destroy_all
+Task.destroy_all
+
+# Removes all old bug, fish, fossil, and villager data
 # Collectable.destroy_all
 # Bug.destroy_all
 # Fish.destroy_all
 # Fossil.destroy_all
 # Villager.destroy_all
-Dailychecklist.destroy_all
-Task.destroy_all
 
 main_collection = Collectable.create(name: "seed_collection")
 
 API_ENDPOINT = "https://nookipedia.com/api/"
 
+# Current list of Bugs
 def bugNames()
     bugNames = [
         "Agrias_Butterfly",
@@ -99,6 +105,7 @@ def bugNames()
     return bugNames
 end
 
+# Current list of Fish
 def fishNames()
     fishNames = [
         "Anchovy",
@@ -185,6 +192,7 @@ def fishNames()
     return fishNames
 end
 
+# Current list of Fossils
 def fossilNames()
     fossilNames = [
         "Amber",
@@ -281,6 +289,7 @@ def fossilNames()
     return fossilNames
 end
 
+# Current list of Villagers
 def villagerNames()
     villagerNames = [
         "Admiral",
@@ -699,14 +708,12 @@ def seedBugs(bugsArray)
                         price: bug['price']
                     )
                 puts bug['name']
-                when 404
-                    ''
                 else
                     '' #response.return!(request, result, &block)
                 end
             }
         end
-        sleep(20)
+        sleep(2)
     end
 end
 
@@ -732,14 +739,12 @@ def seedFish(fishArray)
                         shadow: fish['shadow']
                     )
                 puts fish['name']
-                when 404
-                    ''
                 else
                     '' #response.return!(request, result, &block)
                 end
             }
         end
-        sleep(20)
+        sleep(2)
     end
 end
 
@@ -761,14 +766,12 @@ def seedFossils(fossilsArray)
                         price: fossil['price']
                     )
                 puts fossil['name']
-                when 404
-                    ''
                 else
                     '' #response.return!(request, result, &block)
                 end
             }
         end
-        sleep(20)
+        sleep(2)
     end
 end
 
@@ -798,24 +801,22 @@ def seedVillagers(villagersArray)
                         favcolor: villager['favcolor']
                     )
                 puts villager['name']
-                when 404
-                    ''
                 else
                     '' #response.return!(request, result, &block)
                 end
             }
         end
-        sleep(20)
+        sleep(2)
     end
 end
 
 def callApi()
     # seedBugs(bugNames())
-    # sleep(10)
+    # sleep(1)
     # seedFish(fishNames())
-    # sleep(10)
+    # sleep(1)
     # seedFossils(fossilNames())
-    # sleep(10)
+    # sleep(1)
     # seedVillagers(villagerNames())
 end
 
