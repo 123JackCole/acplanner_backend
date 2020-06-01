@@ -16,7 +16,7 @@ This repo contains the files for setting up the databse for AC Planner. To effec
 3. Run bundle install
 4. Start [Postgres](https://postgresapp.com/downloads.html)
 5. Run rails db:migrate
-6. Set your API key to the rails environment by typing "API_KEY=(your key) ruby -e 'p ENV["API_KEY"]'" in your terminal
+6. Set your API key to the rails environment by typing "export API_KEY=(your key)" in your terminal, followed by "ruby -e 'p ENV["API_KEY"]'"
 7. Run rails db:seed (this will take some time)
 8. Run rails s to start the local server
 9. Set up the [frontend](https://github.com/123JackCole/acplanner_frontend)
