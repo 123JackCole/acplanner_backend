@@ -8,17 +8,17 @@ Dailychecklist.destroy_all
 Task.destroy_all
 
 # Removes all old bug, fish, fossil, and villager data
-# Collectable.destroy_all
-# Bug.destroy_all
-# Fish.destroy_all
-# Fossil.destroy_all
-# Villager.destroy_all
+Collectable.destroy_all
+Bug.destroy_all
+Fish.destroy_all
+Fossil.destroy_all
+Villager.destroy_all
 
 main_collection = Collectable.create(name: "seed_collection")
 
 API_ENDPOINT = "https://nookipedia.com/api/"
 
-API_KEY = "1df0466a-0645-4a04-a2e4-4c1b69b92c4b"; # ENV["API_KEY"]
+API_KEY = "1df0466a-0645-4a04-a2e4-4c1b69b92c4b" # ENV["API_KEY"]
 
 # Current list of Bugs
 def bugNames()
@@ -766,13 +766,13 @@ def seedVillagers(villagersArray)
 end
 
 def callApi()
-#   seedBugs(bugNames())
-#   sleep(1)
-#   seedFish(fishNames())
-#   sleep(1)
-#   seedFossils(fossilNames())
-#   sleep(1)
-#   seedVillagers(villagerNames())
+  seedBugs(bugNames())
+  sleep(1)
+  seedFish(fishNames())
+  sleep(1)
+  seedFossils(fossilNames())
+  sleep(1)
+  seedVillagers(villagerNames())
 end
 
 callApi()
