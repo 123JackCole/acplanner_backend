@@ -18,7 +18,7 @@ main_collection = Collectable.create(name: "seed_collection")
 
 API_ENDPOINT = "https://nookipedia.com/api/"
 
-API_KEY = 1df0466a-0645-4a04-a2e4-4c1b69b92c4b; # ENV["API_KEY"]
+API_KEY = "1df0466a-0645-4a04-a2e4-4c1b69b92c4b"; # ENV["API_KEY"]
 
 # Current list of Bugs
 def bugNames()
