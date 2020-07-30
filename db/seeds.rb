@@ -26,7 +26,7 @@ def bugNames()
     "Agrias%20Butterfly",
     "Ant",
     "Atlas%20Moth",
-    "Bagworm",
+    #"Bagworm", currently bugged in the api
     "Banded%20Dragonfly",
     "Bell%20Cricket",
     "Blue%20Weevil%20Beetle",
@@ -658,7 +658,7 @@ def seedBugs(bugsArray)
         else
         #   ''
           # response.return!(request, result, &block)
-          # puts "something went wrong with #{element}, error #{response.code}"
+          puts "something went wrong with #{element}, error #{response.code}"
         end
       }
     end
@@ -691,7 +691,7 @@ def seedFish(fishArray)
         else
         #   ''
           # response.return!(request, result, &block)
-          # puts "something went wrong with #{element}, error #{response.code}"
+          puts "something went wrong with #{element}, error #{response.code}"
         end
       }
     end
@@ -720,7 +720,7 @@ def seedFossils(fossilsArray)
         else
         #   ''
           # response.return!(request, result, &block)
-          # puts "something went wrong with #{element}, error #{response.code}"
+          puts "something went wrong with #{element}, error #{response.code}"
         end
       }
     end
