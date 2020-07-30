@@ -26,7 +26,7 @@ def bugNames()
     "Agrias%20Butterfly",
     "Ant",
     "Atlas%20Moth",
-    #"Bagworm", currently bugged in the api
+    "Bagworm"
     "Banded%20Dragonfly",
     "Bell%20Cricket",
     "Blue%20Weevil%20Beetle",
@@ -640,21 +640,23 @@ def seedBugs(bugsArray)
       RestClient.get("#{API_ENDPOINT}critter/#{bugsArray[index]}/?api_key=#{API_KEY}") { |response, request, result, &block|
         case response.code
         when 200
-          bug = JSON.parse(response)
-          Bug.create(
-            collectable_id: Collectable.find_by(name: "seed_collection").id,
-            name: bug["name"],
-            image: bug["image"],
-            scientific_name: bug["scientific-name"],
-            family: bug["family"],
-            time_year: bug["time-year"],
-            time_day: bug["time-day"],
-            location: bug["location"],
-            size: bug["size"],
-            rarity: bug["rarity"],
-            price: bug["price"],
-          )
-          puts bug["name"]
+          unless ''
+            bug = JSON.parse(response)
+            Bug.create(
+              collectable_id: Collectable.find_by(name: "seed_collection").id,
+              name: bug["name"],
+              image: bug["image"],
+              scientific_name: bug["scientific-name"],
+              family: bug["family"],
+              time_year: bug["time-year"],
+              time_day: bug["time-day"],
+              location: bug["location"],
+              size: bug["size"],
+              rarity: bug["rarity"],
+              price: bug["price"],
+            )
+            puts bug["name"]
+          end
         else
         #   ''
           # response.return!(request, result, &block)
@@ -672,22 +674,24 @@ def seedFish(fishArray)
       RestClient.get("#{API_ENDPOINT}critter/#{fishArray[index]}/?api_key=#{API_KEY}") { |response, request, result, &block|
         case response.code
         when 200
-          fish = JSON.parse(response)
-          Fish.create(
-            collectable_id: Collectable.find_by(name: "seed_collection").id,
-            name: fish["name"],
-            image: fish["image"],
-            scientific_name: fish["scientific-name"],
-            family: fish["family"],
-            time_year: fish["time-year"],
-            time_day: fish["time-day"],
-            location: fish["location"],
-            size: fish["size"],
-            rarity: fish["rarity"],
-            price: fish["price"],
-            shadow: fish["shadow"],
-          )
-          puts fish["name"]
+          unless ''
+            fish = JSON.parse(response)
+            Fish.create(
+              collectable_id: Collectable.find_by(name: "seed_collection").id,
+              name: fish["name"],
+              image: fish["image"],
+              scientific_name: fish["scientific-name"],
+              family: fish["family"],
+              time_year: fish["time-year"],
+              time_day: fish["time-day"],
+              location: fish["location"],
+              size: fish["size"],
+              rarity: fish["rarity"],
+              price: fish["price"],
+              shadow: fish["shadow"],
+            )
+            puts fish["name"]
+          end
         else
         #   ''
           # response.return!(request, result, &block)
@@ -705,18 +709,20 @@ def seedFossils(fossilsArray)
       RestClient.get("#{API_ENDPOINT}fossil/#{fossilsArray[index]}/?api_key=#{API_KEY}") { |response, request, result, &block|
         case response.code
         when 200
-          fossil = JSON.parse(response)
-          Fossil.create(
-            collectable_id: Collectable.find_by(name: "seed_collection").id,
-            name: fossil["name"],
-            image: fossil["image"],
-            scientific_name: fossil["scientific-name"],
-            sections: fossil["sections"],
-            period: fossil["period"],
-            length: fossil["length"],
-            price: fossil["price"],
-          )
-          puts fossil["name"]
+          unless ''
+            fossil = JSON.parse(response)
+            Fossil.create(
+              collectable_id: Collectable.find_by(name: "seed_collection").id,
+              name: fossil["name"],
+              image: fossil["image"],
+              scientific_name: fossil["scientific-name"],
+              sections: fossil["sections"],
+              period: fossil["period"],
+              length: fossil["length"],
+              price: fossil["price"],
+            )
+            puts fossil["name"]
+          end
         else
         #   ''
           # response.return!(request, result, &block)
