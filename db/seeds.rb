@@ -26,7 +26,7 @@ def bugNames()
     "Agrias%20Butterfly",
     "Ant",
     "Atlas%20Moth",
-    "Bagworm"
+    "Bagworm",
     "Banded%20Dragonfly",
     "Bell%20Cricket",
     "Blue%20Weevil%20Beetle",
