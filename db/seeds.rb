@@ -640,7 +640,7 @@ def seedBugs(bugsArray)
       RestClient.get("#{API_ENDPOINT}critter/#{bugsArray[index]}/?api_key=#{API_KEY}") { |response, request, result, &block|
         case response.code
         when 200
-          unless ''
+          unless response === ''
             bug = JSON.parse(response)
             Bug.create(
               collectable_id: Collectable.find_by(name: "seed_collection").id,
@@ -674,7 +674,7 @@ def seedFish(fishArray)
       RestClient.get("#{API_ENDPOINT}critter/#{fishArray[index]}/?api_key=#{API_KEY}") { |response, request, result, &block|
         case response.code
         when 200
-          unless ''
+          unless response === ''
             fish = JSON.parse(response)
             Fish.create(
               collectable_id: Collectable.find_by(name: "seed_collection").id,
@@ -709,7 +709,7 @@ def seedFossils(fossilsArray)
       RestClient.get("#{API_ENDPOINT}fossil/#{fossilsArray[index]}/?api_key=#{API_KEY}") { |response, request, result, &block|
         case response.code
         when 200
-          unless ''
+          unless response === ''
             fossil = JSON.parse(response)
             Fossil.create(
               collectable_id: Collectable.find_by(name: "seed_collection").id,
@@ -740,26 +740,28 @@ def seedVillagers(villagersArray)
       RestClient.get("#{API_ENDPOINT}villager/#{villagersArray[index]}/?api_key=#{API_KEY}") { |response, request, result, &block|
         case response.code
         when 200
-          villager = JSON.parse(response)
-          Villager.create(
-            name: villager["name"],
-            image: villager["image"],
-            quote: villager["quote"],
-            gender: villager["gender"],
-            personality: villager["personality"],
-            species: villager["species"],
-            birthday: villager["birthday"],
-            sign: villager["sign"],
-            phrase: villager["phrase"],
-            clothes: villager["clothes"],
-            siblings: villager["siblings"],
-            goal: villager["goal"],
-            fear: villager["fear"],
-            favclothing: villager["favclothing"],
-            leastfavclothing: villager["leastfavclothing"],
-            favcolor: villager["favcolor"],
-          )
-          puts villager["name"]
+          unless response === ''
+            villager = JSON.parse(response)
+            Villager.create(
+              name: villager["name"],
+              image: villager["image"],
+              quote: villager["quote"],
+              gender: villager["gender"],
+              personality: villager["personality"],
+              species: villager["species"],
+              birthday: villager["birthday"],
+              sign: villager["sign"],
+              phrase: villager["phrase"],
+              clothes: villager["clothes"],
+              siblings: villager["siblings"],
+              goal: villager["goal"],
+              fear: villager["fear"],
+              favclothing: villager["favclothing"],
+              leastfavclothing: villager["leastfavclothing"],
+              favcolor: villager["favcolor"],
+            )
+            puts villager["name"]
+          end
         else
         #   ''
           # response.return!(request, result, &block)
