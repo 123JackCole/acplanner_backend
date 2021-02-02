@@ -205,7 +205,7 @@ def fossilNames()
     "Australopithecus",
     "Brachiosaurus",
     "Coprolite",
-    # "Deinonychus",
+    "Deinonychus",
     "Dimetrodon",
     "Dinosaur_Track",
     "Diplodocus",
@@ -638,21 +638,23 @@ def seedBugs(bugsArray)
       RestClient.get("#{API_ENDPOINT}critter/#{bugsArray[index]}/?api_key=1df0466a-0645-4a04-a2e4-4c1b69b92c4b") { |response, request, result, &block|
         case response.code
         when 200
-          bug = JSON.parse(response)
-          Bug.create(
-            collectable_id: Collectable.find_by(name: "seed_collection").id,
-            name: bug["name"],
-            image: bug["image"],
-            scientific_name: bug["scientific-name"],
-            family: bug["family"],
-            time_year: bug["time-year"],
-            time_day: bug["time-day"],
-            location: bug["location"],
-            size: bug["size"],
-            rarity: bug["rarity"],
-            price: bug["price"],
-          )
-          puts bug["name"]
+          unless ''
+            bug = JSON.parse(response)
+            Bug.create(
+              collectable_id: Collectable.find_by(name: "seed_collection").id,
+              name: bug["name"],
+              image: bug["image"],
+              scientific_name: bug["scientific-name"],
+              family: bug["family"],
+              time_year: bug["time-year"],
+              time_day: bug["time-day"],
+              location: bug["location"],
+              size: bug["size"],
+              rarity: bug["rarity"],
+              price: bug["price"],
+            )
+            puts bug["name"]
+          end 
         else
         #   ''
           # response.return!(request, result, &block)
@@ -660,7 +662,7 @@ def seedBugs(bugsArray)
         end
       }
     end
-    sleep(11)
+    sleep(9)
   end
 end
 
@@ -670,22 +672,24 @@ def seedFish(fishArray)
       RestClient.get("#{API_ENDPOINT}critter/#{fishArray[index]}/?api_key=1df0466a-0645-4a04-a2e4-4c1b69b92c4b") { |response, request, result, &block|
         case response.code
         when 200
-          fish = JSON.parse(response)
-          Fish.create(
-            collectable_id: Collectable.find_by(name: "seed_collection").id,
-            name: fish["name"],
-            image: fish["image"],
-            scientific_name: fish["scientific-name"],
-            family: fish["family"],
-            time_year: fish["time-year"],
-            time_day: fish["time-day"],
-            location: fish["location"],
-            size: fish["size"],
-            rarity: fish["rarity"],
-            price: fish["price"],
-            shadow: fish["shadow"],
-          )
-          puts fish["name"]
+          unless ''
+            fish = JSON.parse(response)
+            Fish.create(
+              collectable_id: Collectable.find_by(name: "seed_collection").id,
+              name: fish["name"],
+              image: fish["image"],
+              scientific_name: fish["scientific-name"],
+              family: fish["family"],
+              time_year: fish["time-year"],
+              time_day: fish["time-day"],
+              location: fish["location"],
+              size: fish["size"],
+              rarity: fish["rarity"],
+              price: fish["price"],
+              shadow: fish["shadow"],
+            )
+            puts fish["name"]
+          end
         else
         #   ''
           # response.return!(request, result, &block)
@@ -693,7 +697,7 @@ def seedFish(fishArray)
         end
       }
     end
-    sleep(11)
+    sleep(9)
   end
 end
 
@@ -703,18 +707,20 @@ def seedFossils(fossilsArray)
       RestClient.get("#{API_ENDPOINT}fossil/#{fossilsArray[index]}/?api_key=1df0466a-0645-4a04-a2e4-4c1b69b92c4b") { |response, request, result, &block|
         case response.code
         when 200
-          fossil = JSON.parse(response)
-          Fossil.create(
-            collectable_id: Collectable.find_by(name: "seed_collection").id,
-            name: fossil["name"],
-            image: fossil["image"],
-            scientific_name: fossil["scientific-name"],
-            sections: fossil["sections"],
-            period: fossil["period"],
-            length: fossil["length"],
-            price: fossil["price"],
-          )
-          puts fossil["name"]
+          unless ''
+            fossil = JSON.parse(response)
+            Fossil.create(
+              collectable_id: Collectable.find_by(name: "seed_collection").id,
+              name: fossil["name"],
+              image: fossil["image"],
+              scientific_name: fossil["scientific-name"],
+              sections: fossil["sections"],
+              period: fossil["period"],
+              length: fossil["length"],
+              price: fossil["price"],
+            )
+            puts fossil["name"]
+          end
         else
         #   ''
           # response.return!(request, result, &block)
@@ -722,7 +728,7 @@ def seedFossils(fossilsArray)
         end
       }
     end
-    sleep(11)
+    sleep(9)
   end
 end
 
@@ -732,26 +738,28 @@ def seedVillagers(villagersArray)
       RestClient.get("#{API_ENDPOINT}villager/#{villagersArray[index]}/?api_key=#{ENV["API_KEY"]}") { |response, request, result, &block|
         case response.code
         when 200
-          villager = JSON.parse(response)
-          Villager.create(
-            name: villager["name"],
-            image: villager["image"],
-            quote: villager["quote"],
-            gender: villager["gender"],
-            personality: villager["personality"],
-            species: villager["species"],
-            birthday: villager["birthday"],
-            sign: villager["sign"],
-            phrase: villager["phrase"],
-            clothes: villager["clothes"],
-            siblings: villager["siblings"],
-            goal: villager["goal"],
-            fear: villager["fear"],
-            favclothing: villager["favclothing"],
-            leastfavclothing: villager["leastfavclothing"],
-            favcolor: villager["favcolor"],
-          )
-          puts villager["name"]
+          unless ''
+            villager = JSON.parse(response)
+            Villager.create(
+              name: villager["name"],
+              image: villager["image"],
+              quote: villager["quote"],
+              gender: villager["gender"],
+              personality: villager["personality"],
+              species: villager["species"],
+              birthday: villager["birthday"],
+              sign: villager["sign"],
+              phrase: villager["phrase"],
+              clothes: villager["clothes"],
+              siblings: villager["siblings"],
+              goal: villager["goal"],
+              fear: villager["fear"],
+              favclothing: villager["favclothing"],
+              leastfavclothing: villager["leastfavclothing"],
+              favcolor: villager["favcolor"],
+            )
+            puts villager["name"]
+          end
         else
         #   ''
           # response.return!(request, result, &block)
@@ -759,7 +767,7 @@ def seedVillagers(villagersArray)
         end
       }
     end
-    sleep(11)
+    sleep(9)
   end
 end
 
