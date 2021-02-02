@@ -735,7 +735,7 @@ end
 def seedVillagers(villagersArray)
   villagersArray.each_with_index do |element, index|
     begin
-      RestClient.get("#{API_ENDPOINT}villager/#{villagersArray[index]}/?api_key=#{ENV["API_KEY"]}") { |response, request, result, &block|
+      RestClient.get("#{API_ENDPOINT}villager/#{villagersArray[index]}/?api_key=1df0466a-0645-4a04-a2e4-4c1b69b92c4b") { |response, request, result, &block|
         case response.code
         when 200
           unless response === ''
