@@ -773,12 +773,12 @@ end
 
 def callApi()
   seedBugs(bugNames())
-  # sleep(1)
-  # seedFish(fishNames())
-  # sleep(1)
-  # seedFossils(fossilNames())
-  # sleep(1)
-  # seedVillagers(villagerNames())
+  sleep(1)
+  seedFish(fishNames())
+  sleep(1)
+  seedFossils(fossilNames())
+  sleep(1)
+  seedVillagers(villagerNames())
 end
 
 callApi()
