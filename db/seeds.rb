@@ -662,7 +662,7 @@ def seedBugs(bugsArray)
         end
       }
     end
-    sleep(9)
+    sleep(11)
   end
 end
 
@@ -697,7 +697,7 @@ def seedFish(fishArray)
         end
       }
     end
-    sleep(9)
+    sleep(11)
   end
 end
 
@@ -728,7 +728,7 @@ def seedFossils(fossilsArray)
         end
       }
     end
-    sleep(9)
+    sleep(11)
   end
 end
 
@@ -767,7 +767,7 @@ def seedVillagers(villagersArray)
         end
       }
     end
-    sleep(9)
+    sleep(11)
   end
 end
 
