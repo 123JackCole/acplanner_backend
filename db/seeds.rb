@@ -638,7 +638,7 @@ def seedBugs(bugsArray)
       RestClient.get("#{API_ENDPOINT}critter/#{bugsArray[index]}/?api_key=1df0466a-0645-4a04-a2e4-4c1b69b92c4b") { |response, request, result, &block|
         case response.code
         when 200
-          unless ''
+          unless response === ''
             bug = JSON.parse(response)
             Bug.create(
               collectable_id: Collectable.find_by(name: "seed_collection").id,
@@ -672,7 +672,7 @@ def seedFish(fishArray)
       RestClient.get("#{API_ENDPOINT}critter/#{fishArray[index]}/?api_key=1df0466a-0645-4a04-a2e4-4c1b69b92c4b") { |response, request, result, &block|
         case response.code
         when 200
-          unless ''
+          unless response === ''
             fish = JSON.parse(response)
             Fish.create(
               collectable_id: Collectable.find_by(name: "seed_collection").id,
@@ -707,7 +707,7 @@ def seedFossils(fossilsArray)
       RestClient.get("#{API_ENDPOINT}fossil/#{fossilsArray[index]}/?api_key=1df0466a-0645-4a04-a2e4-4c1b69b92c4b") { |response, request, result, &block|
         case response.code
         when 200
-          unless ''
+          unless response === ''
             fossil = JSON.parse(response)
             Fossil.create(
               collectable_id: Collectable.find_by(name: "seed_collection").id,
@@ -738,7 +738,7 @@ def seedVillagers(villagersArray)
       RestClient.get("#{API_ENDPOINT}villager/#{villagersArray[index]}/?api_key=#{ENV["API_KEY"]}") { |response, request, result, &block|
         case response.code
         when 200
-          unless ''
+          unless response === ''
             villager = JSON.parse(response)
             Villager.create(
               name: villager["name"],
