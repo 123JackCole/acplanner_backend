@@ -8,11 +8,11 @@ Dailychecklist.destroy_all
 Task.destroy_all
 
 # Removes all old bug, fish, fossil, and villager data
-# Collectable.destroy_all
-# Bug.destroy_all
-# Fish.destroy_all
-# Fossil.destroy_all
-# Villager.destroy_all
+Collectable.destroy_all
+Bug.destroy_all
+Fish.destroy_all
+Fossil.destroy_all
+Villager.destroy_all
 
 main_collection = Collectable.create(name: "seed_collection")
 
@@ -635,7 +635,7 @@ end
 def seedBugs(bugsArray)
   bugsArray.each_with_index do |element, index|
     begin
-      RestClient.get("#{API_ENDPOINT}critter/#{bugsArray[index]}/?api_key=#{ENV["API_KEY"]}") { |response, request, result, &block|
+      RestClient.get("#{API_ENDPOINT}critter/#{bugsArray[index]}/?api_key=`1df0466a-0645-4a04-a2e4-4c1b69b92c4b`") { |response, request, result, &block|
         case response.code
         when 200
           bug = JSON.parse(response)
@@ -667,7 +667,7 @@ end
 def seedFish(fishArray)
   fishArray.each_with_index do |element, index|
     begin
-      RestClient.get("#{API_ENDPOINT}critter/#{fishArray[index]}/?api_key=#{ENV["API_KEY"]}") { |response, request, result, &block|
+      RestClient.get("#{API_ENDPOINT}critter/#{fishArray[index]}/?api_key=`1df0466a-0645-4a04-a2e4-4c1b69b92c4b`") { |response, request, result, &block|
         case response.code
         when 200
           fish = JSON.parse(response)
@@ -700,7 +700,7 @@ end
 def seedFossils(fossilsArray)
   fossilsArray.each_with_index do |element, index|
     begin
-      RestClient.get("#{API_ENDPOINT}fossil/#{fossilsArray[index]}/?api_key=#{ENV["API_KEY"]}") { |response, request, result, &block|
+      RestClient.get("#{API_ENDPOINT}fossil/#{fossilsArray[index]}/?api_key=`1df0466a-0645-4a04-a2e4-4c1b69b92c4b`") { |response, request, result, &block|
         case response.code
         when 200
           fossil = JSON.parse(response)
