@@ -1,17 +1,17 @@
 require "rest-client"
 
 # Removes all old user accounts
-User.destroy_all
+# User.destroy_all
 
-# Removes all old checklists associated with user accounts
-Dailychecklist.destroy_all
-Task.destroy_all
+# # Removes all old checklists associated with user accounts
+# Dailychecklist.destroy_all
+# Task.destroy_all
 
 # Removes all old bug, fish, fossil, and villager data
-Collectable.destroy_all
-Bug.destroy_all
-Fish.destroy_all
-Fossil.destroy_all
+# Collectable.destroy_all
+# Bug.destroy_all
+# Fish.destroy_all
+# Fossil.destroy_all
 Villager.destroy_all
 
 main_collection = Collectable.create(name: "seed_collection")
@@ -772,12 +772,12 @@ def seedVillagers(villagersArray)
 end
 
 def callApi()
-  seedBugs(bugNames())
-  sleep(1)
-  seedFish(fishNames())
-  sleep(1)
-  seedFossils(fossilNames())
-  sleep(1)
+  # seedBugs(bugNames())
+  # sleep(1)
+  # seedFish(fishNames())
+  # sleep(1)
+  # seedFossils(fossilNames())
+  # sleep(1)
   seedVillagers(villagerNames())
 end
 
