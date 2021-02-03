@@ -11,8 +11,8 @@ require "rest-client"
 # Collectable.destroy_all
 # Bug.destroy_all
 # Fish.destroy_all
-# Fossil.destroy_all
-Villager.destroy_all
+Fossil.destroy_all
+# Villager.destroy_all
 
 main_collection = Collectable.create(name: "seed_collection")
 
@@ -776,9 +776,9 @@ def callApi()
   # sleep(1)
   # seedFish(fishNames())
   # sleep(1)
-  # seedFossils(fossilNames())
+  seedFossils(fossilNames())
   # sleep(1)
-  seedVillagers(villagerNames())
+  # seedVillagers(villagerNames())
 end
 
 callApi()
