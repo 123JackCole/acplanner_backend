@@ -1,9 +1,9 @@
 AC Planner
 ========================
 
-AC Planner is a site aimed at Animal Crossing New Horizons enthusiasts
+AC Planner is a site aimed at Animal Crossing New Horizons enthusiasts!
 
-Here's a link to a [demo](https://www.youtube.com/watch?v=lEGqJHjB6ck)
+Here's a link to the [hosted site](https://ac-planner.herokuapp.com/)and here's a video [demo](https://www.youtube.com/watch?v=lEGqJHjB6ck)
 
 This repo contains the files for setting up the databse for AC Planner. To effectively use this project for your personal user you will need an API key from [Nookipedia](https://nookipedia.com/api/). Once I have hosted the site on Heroku I will update this readme with a link to bypass the requirement of gathering an API key.
 
