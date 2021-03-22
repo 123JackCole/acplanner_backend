@@ -635,7 +635,7 @@ end
 def seedBugs(bugsArray)
   bugsArray.each_with_index do |element, index|
     begin
-      RestClient.get("#{API_ENDPOINT}critter/#{bugsArray[index]}/?api_key=1df0466a-0645-4a04-a2e4-4c1b69b92c4b") { |response, request, result, &block|
+      RestClient.get("#{API_ENDPOINT}critter/#{bugsArray[index]}/?api_key=#{ENV['API_KEY']}") { |response, request, result, &block|
         case response.code
         when 200
           unless response === ''
@@ -669,7 +669,7 @@ end
 def seedFish(fishArray)
   fishArray.each_with_index do |element, index|
     begin
-      RestClient.get("#{API_ENDPOINT}critter/#{fishArray[index]}/?api_key=1df0466a-0645-4a04-a2e4-4c1b69b92c4b") { |response, request, result, &block|
+      RestClient.get("#{API_ENDPOINT}critter/#{fishArray[index]}/?api_key=#{ENV['API_KEY']}") { |response, request, result, &block|
         case response.code
         when 200
           unless response === ''
@@ -704,7 +704,7 @@ end
 def seedFossils(fossilsArray)
   fossilsArray.each_with_index do |element, index|
     begin
-      RestClient.get("#{API_ENDPOINT}fossil/#{fossilsArray[index]}/?api_key=1df0466a-0645-4a04-a2e4-4c1b69b92c4b") { |response, request, result, &block|
+      RestClient.get("#{API_ENDPOINT}fossil/#{fossilsArray[index]}/?api_key=#{ENV['API_KEY']}") { |response, request, result, &block|
         case response.code
         when 200
           unless response === ''
@@ -735,7 +735,7 @@ end
 def seedVillagers(villagersArray)
   villagersArray.each_with_index do |element, index|
     begin
-      RestClient.get("#{API_ENDPOINT}villager/#{villagersArray[index]}/?api_key=1df0466a-0645-4a04-a2e4-4c1b69b92c4b") { |response, request, result, &block|
+      RestClient.get("#{API_ENDPOINT}villager/#{villagersArray[index]}/?api_key=#{ENV['API_KEY']}") { |response, request, result, &block|
         case response.code
         when 200
           unless response === ''
