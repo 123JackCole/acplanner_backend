@@ -51,3 +51,5 @@ gem 'rest-client'
 
 # rails gem to avoid polling changes
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
+gem 'psych', '>= 2.0.0'
