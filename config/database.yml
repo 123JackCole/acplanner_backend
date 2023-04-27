@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: acplanner_production
-  username: acplanner
-  password: 1df0466a-0645-4a04-a2e4-4c1b69b92c4b
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: acplanner_production
+  # username: acplanner
+  # password: 1df0466a-0645-4a04-a2e4-4c1b69b92c4b
