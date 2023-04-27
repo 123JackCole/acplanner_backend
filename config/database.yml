@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: acplanner_development #Jack
+  database: postgres #acplanner_development #Jack
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: acplanner_test
+  database: postgres #acplanner_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: acplanner_production
+  database: postgres #acplanner_production
   username: acplanner
   password: 1df0466a-0645-4a04-a2e4-4c1b69b92c4b
