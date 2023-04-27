@@ -126,7 +126,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.14.3-x64-mingw-ucrt)
       racc (~> 1.4)
-    pg (1.5.1-x64-mingw-ucrt)
+    pg (1.5.2-x64-mingw-ucrt)
     puma (4.3.12)
       nio4r (~> 2.0)
     racc (1.6.2)
